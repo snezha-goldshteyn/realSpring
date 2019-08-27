@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <bean class="labs.intro.quoters.ShakeSpearQuoter" id="shakeSpearQuoter">
+        <property name="message" value="To be or not to be"/>
+    </bean>
+    <bean class="labs.intro.quoters.TerminatorQuoter" id="terminatorQuoter">
+        <property name="messages">
+            <list value-type="java.lang.String">
+                <value>I'll be back</value>
+                <value>Astalavista, baby</value>
+                <value>Give me your clothes</value>
+                <value>Come with me, if you want to live</value>
+                <ref bean="anotherMessage"/>
+            </list>
+        </property>
+    </bean>
+    <bean class="labs.intro.quoters.TalckingRobotImpl" id="talckingRobot">
+        <property name="quoters">
+            <list>
+                <ref bean="terminatorQuoter"/>
+                <ref bean="shakeSpearQuoter"/>
+            </list>
+        </property>
+    </bean>
+    <bean class="java.lang.String" id="anotherMessage">
+        <constructor-arg value="Trust me"/>
+    </bean>
+</beans>
