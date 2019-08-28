@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
  * @author Evgeny Borisov
  */
 @Component
+//@Component("REDIRECTION")
 public class RedirectionHttpCodeHandler implements HttpCodeHandler {
     @Override
     public HttpCodeEnum type() {

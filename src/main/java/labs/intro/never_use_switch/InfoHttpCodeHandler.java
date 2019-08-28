@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
+//@Component("INFO")
 public class InfoHttpCodeHandler implements HttpCodeHandler {
-
 
     @Override
     public HttpCodeEnum type() {
