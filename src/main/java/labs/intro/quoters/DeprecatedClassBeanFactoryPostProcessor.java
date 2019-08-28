@@ -7,7 +7,7 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class DeprecatedClassBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @SneakyThrows

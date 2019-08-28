@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PreDestroy;
 import java.lang.reflect.Method;
 
-@Component
+//@Component
 public class PrototypeAndDestroyMethodBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @SneakyThrows

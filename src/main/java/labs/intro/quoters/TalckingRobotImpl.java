@@ -2,15 +2,16 @@ package labs.intro.quoters;
 
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
-//@Setter
 @Component
 public class TalckingRobotImpl implements TalckingRobot {
-    @Autowired
+
+    @Film
     List<Quoter> quoters;
 
     @Override

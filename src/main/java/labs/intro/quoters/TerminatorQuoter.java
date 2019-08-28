@@ -1,22 +1,33 @@
 package labs.intro.quoters;
 
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//@Setter
 //@DeprecatedClass(newImplementation = T1000.class)
-@Component
+
+@Film
 public class TerminatorQuoter implements Quoter {
     private List<String> messages;
 
+    @Autowired
+    private String string;
+
+    @PostConstruct
+    public void addStringToList() {
+        messages.add(string);
+    }
+
     @Value("${terminator}")
     public void setMessages(String [] messages) {
-        this.messages = Arrays.asList(messages);
+        this.messages = new ArrayList<>(Arrays.asList(messages));
     }
 
     @Override

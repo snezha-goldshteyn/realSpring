@@ -12,12 +12,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class IntroApplication {
 
     public static void main(String[] args) {
-
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-//        System.out.println(context.getBean(Integer.class));
-//        System.out.println(context.getBean(Integer.class));
-//        System.out.println(context.getBean(Integer.class));
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("labs.intro.quoters");
+        context.close();
     }
 
 }
