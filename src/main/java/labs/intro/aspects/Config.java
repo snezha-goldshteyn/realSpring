@@ -9,6 +9,11 @@ import org.springframework.context.annotation.*;
 public class Config {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        context.getBean(SendService.class).throwException();
+        SendService bean = context.getBean(SendService.class);
+        try {
+            bean.throwException();
+        } catch (Exception e) {
+            System.out.println("We are solving problem");
+        }
     }
 }

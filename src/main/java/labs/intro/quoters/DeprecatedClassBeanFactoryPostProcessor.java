@@ -17,6 +17,9 @@ public class DeprecatedClassBeanFactoryPostProcessor implements BeanFactoryPostP
         for (String name : names) {
             BeanDefinition definition = factory.getBeanDefinition(name);
             String beanName = definition.getBeanClassName();
+            if (beanName == null) {
+                continue;
+            }
             Class<?> aClass = Class.forName(beanName);
             DeprecatedClass deprecated = aClass.getAnnotation(DeprecatedClass.class);
             if (deprecated != null) {

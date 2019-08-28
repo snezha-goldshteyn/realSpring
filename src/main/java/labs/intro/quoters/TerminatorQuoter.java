@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//@DeprecatedClass(newImplementation = T1000.class)
-
+@DeprecatedClass(newImplementation = T1000.class)
 @Film
 public class TerminatorQuoter implements Quoter {
     private List<String> messages;
